@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Барилюк лабораторная работа №5</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function Construction(n_param,n_param1,param,param1) { //создаем конструктор
+			return{
+				[n_param]: param, //динамичесое создание переменных
+				[n_param1]: param1
+			};
+			
+
+		}
+		var buttons = new Array(1200); //создание массива для объектов
+		var i = 0;  // счетчик для массива, чтобы проходить каждую ячейку массива
+		var flag = true; // флаг цикла, чтобы из него можно было выйти
+		while(flag){
+			var object = prompt("название объекта");
+			if (object == "stop"){ //если указанно название объекта stop, то выходим из цикла
+				flag = false;
+				break;
+			}
+			var n_param = prompt("название первого параметра"); //переменные в которые вводятся наименование параметров
+			var param = prompt("значение первого параметра");
+			var n_param1 = prompt("название второго параметра");
+			var param1 = prompt("значение второго параметра");
+			
+			buttons[i] = new Construction(n_param,n_param1,param,param1); // вызываем конструктор и записываем объекты в массив
+			console.log(buttons[i]); //выводим объекты на экран
+			i++;
+		}
+
+	</script>
+
+</body>
+</html>
